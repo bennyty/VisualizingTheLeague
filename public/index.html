@@ -14,7 +14,7 @@
 
 			function drawChart() {
 				var jsonData = $.ajax({
-                    url: "data/BRONZE.json",
+                    url: "data/PLATINUM.json",
                     dataType: "json",
                     async: false,
                 }).responseText;
@@ -27,16 +27,26 @@
                 
                 var options = {
                     title: 'Age vs. Weight comparison',
-                    hAxis: {title: 'Age', minValue: 0, maxValue: 1, logScale: true},
-                    vAxis: {title: 'Weight', minValue: 0, maxValue: 1, logScale: true},
+                    hAxis: {title: 'Win Percentage', minValue: 0, maxValue: 1, logScale: false},
+                    vAxis: {title: 'Buy Percentage', minValue: 0, maxValue: 1, logScale: true},
                     legend: 'none',
-                    width: 1000,
-                    height: 500
+                    width: 1300,
+                    height: 600,
+                    animation: {
+				        duration: 1000,
+				        easing: 'out',
+				        startup: true
+				    }
                 };
 				chart.draw(data, options);
+				
+				$( "circle" ).css( "stroke", "red" );
+				$( "circle" ).css( "stroke-width", "4" );
 			}
 
 		</script>
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script> -->
+		<script src="js/pinIcons.js"></script>
 	</head>
 
 	<body>
