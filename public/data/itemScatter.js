@@ -1,23 +1,33 @@
-console.log("HII");
-
-// var data = [[5,3], [10,17], [15,4], [2,8]];
-
 var margin = { top: 10, right: 25, bottom: 45, left: 20 },
 	width = parseInt(d3.select('#itemScatter').style('width')),
     width = width - margin.left - margin.right,
     height = 440 - margin.top - margin.bottom;
     halfImage = 8;
 
-d3.json("data/BRONZE.json", function(error, data) {
+// d3.json("data/BRONZE.json", function(error, data) {
+// d3.json("data/SILVER.json", function(error, data) {
+// d3.json("data/GOLD.json", function(error, data) {
+// d3.json("data/PLATINUM.json", function(error, data) {
+// d3.json("data/DIAMOND.json", function(error, data) {
+// d3.json("data/CHALLENGER.json", function(error, data) {
+
+function update( rank ) {
+
+  d3.select('svg').remove();
+
+  d3.json("data/"+rank+".json", function(error, data) {
 
 var xScale = d3.scale.linear()
-        	   .domain([0, d3.max(data, function(d) { return d["winPercent"]; })])
-          	   .range([ 0, width ]),
+        	   .domain([-.01, d3.max(data, function(d) { return d["winPercent"]; })])
+          	   .range([ 14 + halfImage, width ]),
     xAxis = d3.svg.axis().scale(xScale).orient("bottom");
 
 var yScale = d3.scale.log()
 			   .base(10)
-	    	   .domain([.00001, d3.max(data, function(d) { return d["buyPercent"] + .1; })])
+	    	   .domain([d3.min(data, function(d) { return d["buyPercent"]; }),
+                  // -((d3.max(data, function(d) { return d["buyPercent"]; })-
+                  //   d3.min(data, function(d) { return d["buyPercent"]; }))/8000),
+                    d3.max(data, function(d) { return d["buyPercent"]; })])
 	    	   .range([ height, 0 ]);
 var yAxis = d3.svg.axis().scale(yScale).orient("left");
 
@@ -72,7 +82,7 @@ svg.selectAll("scatter-dots")
 // x-axis
 svg.append("g")
   .attr("class", "x axis")
-  .attr("transform", "translate(14," + height + ")")
+  .attr("transform", "translate(0," + (height + 8) + ")")
   .call(xAxis)
 .append("text")
   .attr("class", "label")
@@ -94,4 +104,27 @@ svg.append("g")
   .style("text-anchor", "end")
   .text("Purchase %");
 
+});}
+
+update('UNRANKED');
+
+$('.btnPlay').click(function(e){
+    $('#overlay').fadeIn(500);
 });
+
+$('#overlay').click(function(e){
+    $('#overlay').fadeOut(500);
+});
+
+$('#searchBox').keydown(function(e){
+    if (event.keyCode == 13){
+    $('#warning').fadeIn(500);
+  }
+});
+
+$('#warning').click(function(e){
+    $(this).fadeOut(500);
+});
+
+
+

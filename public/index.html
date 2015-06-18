@@ -18,11 +18,15 @@
 			<div class="dot"></div>
 			<video src="media/bgvideo.mp4" autoplay loop></video>
 		</div>
+		<div id="overlay">
+			<input type="text" id="searchBox" onkeydown="if (event.keyCode == 13){}">
+		</div>
+		<img src="http://cliparts.co/cliparts/Bca/E5y/BcaE5yLqi.jpg" alt="stop" id="warning">
 
 		<nav>
 			<div class="header">
 				<img src="media/banner.png" alt="CLIENT HEADER" class="clientBanner">
-				<a href="http://www.google.com"><img src="media/btnSearch.png" alt="Search" class="btnPlay"></a>
+				<a href="#" class="btnPlay"><img src="media/btnSearch.png" alt="Search"></a>
 			</div>
 		</nav>		
 
@@ -32,17 +36,23 @@
 			<nav class="navbar navbar-default">
 				<div class="container-fluid">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="#" onclick="update('BRONZE')">Bronze</a></li>
-						<li><a href="#" onclick="update('SILVER')">Silver</a></li>
-						<li><a href="#" onclick="update('GOLD')">Gold</a></li>
-						<li><a href="#" onclick="update('PLATINUM')">Platinum</a></li>
-						<li><a href="#" onclick="update('DIAMOND')">Diamond</a></li>
-						<li><a href="#" onclick="update('CHALLENGER')">Challenger</a></li>
+						<li class="active"><a href="#" onclick="update('UNRANKED')">Unranked (1582035)</a></li>
+						<li><a href="#" onclick="update('BRONZE')">Bronze (407407)</a></li>
+						<li><a href="#" onclick="update('SILVER')">Silver (1045205)</a></li>
+						<li><a href="#" onclick="update('GOLD')">Gold (658546)</a></li>
+						<li><a href="#" onclick="update('PLATINUM')">Platinum (237265)</a></li>
+						<li><a href="#" onclick="update('DIAMOND')">Diamond (94703)</a></li>
+						<li><a href="#" onclick="update('MASTER')">Master (5257)</a></li>
+						<li><a href="#" onclick="update('CHALLENGER')">Challenger (1582)</a></li>
 					</ul>
 				</div>
 			</nav>
-			<div id="itemScatter"/>
+			<div class="chart container-fluid">
+				<div text-align="center" float="left">Visualizing the League is a webpage dedicated to looking at League of Legends in macroscopic fashion. Below is a scatterplot that shows item win rate vs. its popularity.</div>
+				<div float="right" id="itemScatter"/>
+			</div>
 		</div>
 		<script src="data/itemScatter.js"></script>
+		<div class="container" id="footer">Visualizing the League isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.</div>
 	</body>
 </html>
