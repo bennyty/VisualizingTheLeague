@@ -7,7 +7,7 @@
 	background: -ms-linear-gradient(top,  rgba(247,251,252,1) 0%,rgba(217,237,242,1) 40%,rgba(173,217,228,1) 100%); /* IE10+ */
 	background: linear-gradient(to bottom,  rgba(247,251,252,1) 0%,rgba(217,237,242,1) 40%,rgba(173,217,228,1) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7fbfc', endColorstr='#add9e4',GradientType=0 ); /* IE6-9 */
-
+	opacity: .9;
 	margin-top: 25px;
 	border: 5px solid grey;
 }
@@ -83,9 +83,22 @@ html {
 }
 
 .navbar-default {
-  background-color: rgba(0, 0, 0, 0.5);
-  background-image: "media/banner.png";
-  margin-top: 30px;
+  margin-top: 25px;
+  border-color: black;
   border-radius: 10px;
   padding: 0 10px;
+
+}
+
+nav div ul {
+display: table;
+width: 100%;
+list-style: none;
+}
+nav div ul li {
+display: table-cell;
+text-align: center;
+}
+nav div ul li a {
+display: block;
 }

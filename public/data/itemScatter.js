@@ -2,10 +2,10 @@ console.log("HII");
 
 // var data = [[5,3], [10,17], [15,4], [2,8]];
 
-var margin = { top: 10, right: 25, bottom: 20, left: 20 },
+var margin = { top: 10, right: 25, bottom: 45, left: 20 },
 	width = parseInt(d3.select('#itemScatter').style('width')),
     width = width - margin.left - margin.right,
-    height = 340 - margin.top - margin.bottom;
+    height = 440 - margin.top - margin.bottom;
     halfImage = 8;
 
 d3.json("data/BRONZE.json", function(error, data) {
@@ -77,7 +77,7 @@ svg.append("g")
 .append("text")
   .attr("class", "label")
   .attr("x", width / 2 )
-  .attr("y", -6)
+  .attr("y", 35)
   .style("text-anchor", "middle")
   .text("Win %");
 

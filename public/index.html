@@ -24,29 +24,25 @@
 				<img src="media/banner.png" alt="CLIENT HEADER" class="clientBanner">
 				<a href="http://www.google.com"><img src="media/btnSearch.png" alt="Search" class="btnPlay"></a>
 			</div>
-		</nav>
-			<!-- <nav class="navbar navbar-default">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<a href="index.html" class="navbar-brand">Visualizing the League</a>
-					</div>
+		</nav>		
 
-					<div>
-						<ul class="nav navbar-nav">
-							<li class="active">Home</li>
-							<li>Search</li>
-							<li>About</li>
-						</ul>
-					</div>
-				</div>
-			</nav> -->
+
 			
-			<div class="mainContent container">
-				<div id="itemScatter"/>
-			</div>
+		<div class="mainContent container">
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#" onclick="update('BRONZE')">Bronze</a></li>
+						<li><a href="#" onclick="update('SILVER')">Silver</a></li>
+						<li><a href="#" onclick="update('GOLD')">Gold</a></li>
+						<li><a href="#" onclick="update('PLATINUM')">Platinum</a></li>
+						<li><a href="#" onclick="update('DIAMOND')">Diamond</a></li>
+						<li><a href="#" onclick="update('CHALLENGER')">Challenger</a></li>
+					</ul>
+				</div>
+			</nav>
+			<div id="itemScatter"/>
 		</div>
-		
-
-		// <script src="data/itemScatter.js"></script>
+		<script src="data/itemScatter.js"></script>
 	</body>
 </html>
