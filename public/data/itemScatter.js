@@ -36,9 +36,9 @@ var tip = d3.tip()
   .offset([-10, 0])
   .html(function(d) {
   	if (d["id"] == 0) {
-		return "<div width='100%'><img width='32px' id='tipImg' src='http://static.tsviewer.com/images/games/lol.gif' alt="+d["id"]+" /></div><span margin-top='4px' align='center' style='color:white'>" + d['name'] + "</span>";
+		return "<div width='100%'><img width='32px' id='tipImg' src='https://static.tsviewer.com/images/games/lol.gif' alt="+d["id"]+" /></div><span margin-top='4px' align='center' style='color:white'>" + d['name'] + "</span>";
 	};
-    return "<div width='100%'><img id='tipImg' src='http://ddragon.leagueoflegends.com/cdn/5.11.1/img/item/"+d["id"]+".png' alt="+d["id"]+" /></div><span align='center' style='color:white'>" + d['name'] + "</span>";
+    return "<div width='100%'><img id='tipImg' src='https://ddragon.leagueoflegends.com/cdn/5.11.1/img/item/"+d["id"]+".png' alt="+d["id"]+" /></div><span align='center' style='color:white'>" + d['name'] + "</span>";
   })
 
 var svg = d3.select('#itemScatter').append('svg')
@@ -66,9 +66,9 @@ svg.selectAll("scatter-dots")
 	.attr('class', 'champion-circle')
     .attr("xlink:href", function (d) { 
     	if (d["id"] == 0) {
-    		return "http://static.tsviewer.com/images/games/lol.gif";
+    		return "https://static.tsviewer.com/images/games/lol.gif";
     	};
-    	return "http://ddragon.leagueoflegends.com/cdn/5.11.1/img/item/"+d["id"]+".png";
+    	return "https://ddragon.leagueoflegends.com/cdn/5.11.1/img/item/"+d["id"]+".png";
     	// return "media/"+d["id"]+".png";
     })
     .attr("x", function (d) { return xScale(d["winPercent"]) - halfImage;})
