@@ -1,0 +1,91 @@
+.mainContent {
+	background: rgb(247,251,252); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(247,251,252,1) 0%, rgba(217,237,242,1) 40%, rgba(173,217,228,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(247,251,252,1)), color-stop(40%,rgba(217,237,242,1)), color-stop(100%,rgba(173,217,228,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(247,251,252,1) 0%,rgba(217,237,242,1) 40%,rgba(173,217,228,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(247,251,252,1) 0%,rgba(217,237,242,1) 40%,rgba(173,217,228,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(247,251,252,1) 0%,rgba(217,237,242,1) 40%,rgba(173,217,228,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(247,251,252,1) 0%,rgba(217,237,242,1) 40%,rgba(173,217,228,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7fbfc', endColorstr='#add9e4',GradientType=0 ); /* IE6-9 */
+
+	margin-top: 25px;
+	border: 5px solid grey;
+}
+
+.header {
+	position: relative;
+}
+
+.header .btnPlay {
+	position: absolute;
+	width: 11.9%;
+	top: 18.24%;
+	left: 43.75%;
+	z-index: 5;
+}
+
+.header img {
+	position: relative;
+	width: 100%;
+	z-index: -1;
+	left: 0;
+	top: 0;
+}
+
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.background .dot {
+  position: absolute;
+  /*background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABdJREFUeNpiYWBgmAnEDExAnAZiAAQYAArIAQY6xmzeAAAAAElFTkSuQmCC');*/
+  background-image: url(data:image/gif;base64,R0lGODlhBQAHAIAAAAAAAL+/vyH5BAEAAAEALAAAAAAFAAcAAAIKDI5hoH3KXGSpAAA7);
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+}
+.background video {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+svg {
+	/*background-color: aliceblue;*/
+	/*margin-left: 10px;*/
+	overflow: scroll;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+  z-index: 10;
+}
+
+#tipImg {
+	margin: 0 auto;
+}
+
+#itemScatter {
+
+}
+
+html {
+   overflow-y: scroll;
+}
+
+.navbar-default {
+  background-color: rgba(0, 0, 0, 0.5);
+  background-image: "media/banner.png";
+  margin-top: 30px;
+  border-radius: 10px;
+  padding: 0 10px;
+}

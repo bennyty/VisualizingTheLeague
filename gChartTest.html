@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<!--Load the AJAX API-->
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<link rel="stylesheet" href="css/index.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+		<link href="https://raw.githubusercontent.com/novus/nvd3/master/build/nv.d3.min.css" rel="stylesheet">
+		<script src="https://raw.githubusercontent.com/novus/nvd3/master/build/nv.d3.min.js"></script>
+		<!-- <script type="text/javascript">
+			// Load the Visualization API and the piechart package.
+			google.load('visualization', '1', {'packages':['corechart']});
+			// Set a callback to run when the Google Visualization API is loaded.
+			google.setOnLoadCallback(drawChart);
+			function drawChart() {
+				var jsonData = $.ajax({
+                    url: "data/PLATINUM.json",
+                    dataType: "json",
+                    async: false,
+                }).responseText;
+                
+				// Create our data table out of JSON data loaded from server.
+				var data = new google.visualization.DataTable(jsonData);
+
+				// Instantiate and draw our chart, passing in some options.
+				var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+                
+                var options = {
+                    title: 'Age vs. Weight comparison',
+                    hAxis: {title: 'Win Percentage', minValue: 0, maxValue: 1, logScale: false},
+                    vAxis: {title: 'Buy Percentage', minValue: 0, maxValue: .01, logScale: true},
+                    legend: 'none',
+                    width: 1300,
+                    height: 600
+                };
+				chart.draw(data, options);
+
+				$( "circle" ).append("<div id='item-image' ></div>");
+			}
+
+		</script> -->
+
+		<script src="js/pinIcons.js"></script>
+	</head>
+
+	<body>
+		<!--Div that will hold the pie chart-->
+		<div id="chart_div"></div>
+	</body>
+</html>

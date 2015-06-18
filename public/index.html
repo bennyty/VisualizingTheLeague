@@ -1,56 +1,52 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
-		<!--Load the AJAX API-->
-		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	    <title>Visualizing the League</title>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<script type="text/javascript">
+	    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-			// Load the Visualization API and the piechart package.
-			google.load('visualization', '1', {'packages':['corechart']});
-
-			// Set a callback to run when the Google Visualization API is loaded.
-			google.setOnLoadCallback(drawChart);
-
-			function drawChart() {
-				var jsonData = $.ajax({
-                    url: "data/PLATINUM.json",
-                    dataType: "json",
-                    async: false,
-                }).responseText;
-                
-				// Create our data table out of JSON data loaded from server.
-				var data = new google.visualization.DataTable(jsonData);
-
-				// Instantiate and draw our chart, passing in some options.
-				var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
-                
-                var options = {
-                    title: 'Age vs. Weight comparison',
-                    hAxis: {title: 'Win Percentage', minValue: 0, maxValue: 1, logScale: false},
-                    vAxis: {title: 'Buy Percentage', minValue: 0, maxValue: 1, logScale: true},
-                    legend: 'none',
-                    width: 1300,
-                    height: 600,
-                    animation: {
-				        duration: 1000,
-				        easing: 'out',
-				        startup: true
-				    }
-                };
-				chart.draw(data, options);
-				
-				$( "circle" ).css( "stroke", "red" );
-				$( "circle" ).css( "stroke-width", "4" );
-			}
-
-		</script>
-		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script> -->
-		<script src="js/pinIcons.js"></script>
+		<script src="js/d3.min.js"></script>
+		<script src="js/d3tooltip.js"></script>
+		<link rel="stylesheet" href="css/index.css">
 	</head>
-
 	<body>
-		<!--Div that will hold the pie chart-->
-		<div id="chart_div"></div>
+		<div class="background">
+			<div class="dot"></div>
+			<video src="media/bgvideo.mp4" autoplay loop></video>
+		</div>
+
+		<nav>
+			<div class="header">
+				<img src="media/banner.png" alt="CLIENT HEADER" class="clientBanner">
+				<a href="http://www.google.com"><img src="media/btnSearch.png" alt="Search" class="btnPlay"></a>
+			</div>
+		</nav>
+			<!-- <nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a href="index.html" class="navbar-brand">Visualizing the League</a>
+					</div>
+
+					<div>
+						<ul class="nav navbar-nav">
+							<li class="active">Home</li>
+							<li>Search</li>
+							<li>About</li>
+						</ul>
+					</div>
+				</div>
+			</nav> -->
+			
+			<div class="mainContent container">
+				<div id="itemScatter"/>
+			</div>
+		</div>
+		
+
+		// <script src="data/itemScatter.js"></script>
 	</body>
 </html>
