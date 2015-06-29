@@ -3,6 +3,7 @@
 A Node.js app using [Express 4](http://expressjs.com/).
 
 This application is currently deployed on [Heroku](http://vtl.heroku.com/). http://vtl.heroku.com/
+It may take a few seconds to load if you are the first to visit the site in some time.
 
 ## Running Locally
 
